@@ -57,12 +57,30 @@ const main = async () => {
 
 
     // 5.0 Where
+    // try {
+    //     const filter = await db.where({name: "user 1"}).table("users")
+    //     console.log(filter)
+    // }catch(e) {
+    //     console.log(e)
+    // }
+
+
+    // 5.1 Where
+    // try {
+    //     const filter = await db.where({id: 3}).table("users")
+    //     console.log(filter)
+    // }catch(e) {
+    //     console.log(e)
+    // }
+
+    // 5.1 Where using OR
     try {
-        const filter = await db.where({name: "user 1"}).table("users")
+        const filter = await db.where({id: 3}).orWhere({id: 4}).table("users")
         console.log(filter)
     }catch(e) {
         console.log(e)
     }
+
 
 }
 
