@@ -55,6 +55,15 @@ const main = async () => {
     //     console.log(e)
     // }
 
+
+    // 5.0 Where
+    try {
+        const filter = await db.where({name: "user 1"}).table("users")
+        console.log(filter)
+    }catch(e) {
+        console.log(e)
+    }
+
 }
 
 main()
