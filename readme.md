@@ -1,0 +1,1 @@
+to start mysql run `docker-compose up` inside mysql-docker-compose folder
