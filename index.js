@@ -84,7 +84,7 @@ const main = async () => {
 
     // 5.1 Where > < !=
     try {
-        const filter = await db.whereRaw("id  < 5").table("users")
+        const filter = await db.whereRaw("id  < 5").orWhere({id: 7}).table("users")
         console.log(filter)
     }catch(e) {
         console.log(e)
