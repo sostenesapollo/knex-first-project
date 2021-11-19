@@ -39,8 +39,12 @@ const main = async () => {
 
 
     // 4. Select data
-    const users = await db.select("*").from("users")
-    console.log(users)
+    try {
+        const users = await db.select("*").from("users")
+        console.log(users)
+    } catch(e) {
+        console.log(e)
+    }
 }
 
 main()
