@@ -39,12 +39,22 @@ const main = async () => {
 
 
     // 4. Select data
-    try {
-        const users = await db.select("*").from("users")
-        console.log(users)
-    } catch(e) {
-        console.log(e)
-    }
+    // try {
+    //     const users = await db.select("*").from("users")
+    //     console.log(users)
+    // } catch(e) {
+    //     console.log(e)
+    // }
+
+
+    // 4.1 Select specific fields
+    // try {
+    //     const users = await db.select(["name"]).from("users")
+    //     console.log(users)
+    // } catch(e) {
+    //     console.log(e)
+    // }
+
 }
 
 main()
