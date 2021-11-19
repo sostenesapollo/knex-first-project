@@ -1,29 +1,46 @@
 const db = require('./database')
 
-// 1. Create table
-// db.schema.createTable('users', table => {
-//     table.increments();
-//     table.string("name");
-// })
-// .then(()=>{ console.log("table created")})
-// .catch(err=>{ console.log("error to create", err)})
+const main = async () => {
+
+    // 1. Create table
+    // try {
+    //      await db.schema.createTable('users', table => {
+    //          table.increments();
+    //          table.string("name");
+    //      })
+    // } catch (error) {    
+    //     console.log(error)
+    // }
 
 
-// 2. Insert single data
-// const user = { name:"apollo" }
-// db.insert(user).into("users")
-//     .then(data=>console.log(data))
-//     .catch(err=>console.log(err))
+    // 2. Insert single data
+    // const user = { name:"apollo" }
+    // try {
+    //     const inserted = await db.insert(user).into("users")
+    //     console.log(inserted)
+    // } catch(e) {
+    //     console.log(err)
+    // }
 
 
 
-// 3. Insert multiple data at once
-// const multipleUsers = [
-//     {name:"user 1"},
-//     {name:"user 2"}, 
-//     {name:"user 3"}
-// ]
+    // 3. Insert multiple data at once
+    // const multipleUsers = [
+    //     {name:"user 1"},
+    //     {name:"user 2"}, 
+    //     {name:"user 3"}
+    // ]
+    // try {
+    //     const inserted = await db.insert(multipleUsers).into("users")
+    //     console.log(inserted)
+    // } catch(e) {
+    //     console.log(err)
+    // }
 
-// db.insert(multipleUsers).into("users")
-//     .then(data=>console.log(data))
-//     .catch(err=>console.log(err))
+
+    // 4. Select data
+    const users = await db.select("*").from("users")
+    console.log(users)
+}
+
+main()
